@@ -25,6 +25,42 @@
 				margin-bottom: 20px !important;
 			}
 
+			/* Hero (#top) bölməsinə yeni arxa fon */
+			#top {
+				background-image: url('images/banner.png');
+				background-size: cover;
+				background-position: right center;
+				background-repeat: no-repeat;
+				color: #ffffff;
+				position: relative;
+			}
+
+			/* Yazıların qızılı fonda aydın oxunması üçün kölgə */
+			#top h1, #top h1 strong, #top p {
+				color: #ffffff !important;
+				text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+			}
+
+			/* Hero bölməsindəki düymələrin dizaynı */
+			#top .button {
+				background-color: #1f1f1f;
+				color: #ffffff !important;
+				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+			}
+			#top .button:hover {
+				background-color: #333333;
+			}
+			#top .button.alt {
+				background-color: rgba(255, 255, 255, 0.2);
+				border: 1px solid #ffffff;
+			}
+
+			.hero-buttons {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 15px;
+			}
+
 			/* Layihə kartlarının eyni hündürlükdə və səliqəli görünməsi üçün */
 			.box.style2 {
 				display: flex;
@@ -43,10 +79,12 @@
 				margin-top: auto;
 				padding-top: 15px;
 			}
-			.hero-buttons {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 15px;
+
+			/* Mobil ekranlar üçün arxa fon tənzimləməsi */
+			@media screen and (max-width: 736px) {
+				#top {
+					background-position: left center;
+				}
 			}
 		</style>
 	</head>
@@ -76,7 +114,6 @@
 						<p>Müasir standartlara cavab verən, sürətli və funksional iOS və Android tətbiqlərinin hazırlanması üzrə ixtisaslaşmış mobil proqram təminatı mühəndisiyəm.</p>
 						<div class="hero-buttons">
 							<a href="#work" class="button large scrolly">Bacarıqlarımla tanış ol</a>
-							<!-- CV faylınızı qovluğa atıb adını bura yazın -->
 							<a href="Xatun_Abdullayeva_CV.pdf" class="button large alt" download>CV Yüklə</a>
 						</div>
 					</div>
@@ -142,3 +179,92 @@
 					</div>
 					<div class="col-4 col-6-medium col-12-small">
 						<article class="box style2">
+							<div>
+								<a href="https://github.com/XatunDev/talk-mart" target="_blank" class="image featured"><img src="images/talk-mart-logo.png" alt="TalkMart App" /></a>
+								<h3><a href="https://github.com/XatunDev/talk-mart" target="_blank">TalkMart</a></h3>
+								<p>Məhsul siyahısı, səbət idarəedilməsi və REST API inteqrasiyası olan e-ticarət tətbiqi.</p>
+							</div>
+							<div class="project-buttons">
+								<a href="https://github.com/XatunDev/talk-mart/releases/download/v1.0.0/app-release-11.apk" class="button small" download>APK Yüklə</a>
+								<a href="https://github.com/XatunDev/talk-mart" target="_blank" class="button small alt">GitHub</a>
+							</div>
+						</article>
+					</div>
+					<div class="col-4 col-6-medium col-12-small">
+						<article class="box style2">
+							<div>
+								<a href="https://github.com/XatunDev" target="_blank" class="image featured"><img src="images/pic03.jpg" alt="Task Management App" /></a>
+								<h3><a href="https://github.com/XatunDev" target="_blank">Task Management App</a></h3>
+								<p>Tapşırıqların izlənilməsi üçün Flutter və Firebase inteqrasiyalı idarəetmə layihəsi.</p>
+							</div>
+							<div class="project-buttons">
+								<a href="https://github.com/XatunDev" target="_blank" class="button small alt">GitHub-da Bax</a>
+							</div>
+						</article>
+					</div>
+				</div>
+				<footer>
+					<p>Hər hansı bir sualınız və ya layihə təklifiniz var?</p>
+					<a href="#contact" class="button large scrolly">Mənimlə əlaqə saxlayın</a>
+				</footer>
+			</div>
+		</article>
+
+		<article id="contact" class="wrapper style4">
+			<div class="container medium">
+				<header>
+					<h2>Mənimlə əlaqəyə keçin.</h2>
+					<p>Formu dolduraraq mesaj göndərə və ya sosial şəbəkələrdən yaza bilərsiniz.</p>
+				</header>
+				<div class="row">
+					<div class="col-12">
+						<form method="POST" action="https://formspree.io/f/mrevvpqv">
+							<div class="row">
+								<div class="col-6 col-12-small">
+									<input type="text" name="name" id="name" placeholder="Adınız" required />
+								</div>
+								<div class="col-6 col-12-small">
+									<input type="email" name="email" id="email" placeholder="Email ünvanınız" required />
+								</div>
+								<div class="col-12">
+									<input type="text" name="subject" id="subject" placeholder="Mövzu" required />
+								</div>
+								<div class="col-12">
+									<textarea name="message" id="message" placeholder="Mesajınız" required></textarea>
+								</div>
+								<div class="col-12">
+									<ul class="actions">
+										<li><input type="submit" value="Mesajı Göndər" /></li>
+										<li><input type="reset" value="Təmizlə" class="alt" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="col-12">
+						<hr />
+						<h3>Məni buralarda tapın...</h3>
+						<ul class="social">
+							<li><a href="https://linkedin.com/in/xatun-abdullayeva" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+							<li><a href="https://github.com/XatunDev" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						</ul>
+						<hr />
+					</div>
+				</div>
+				<footer>
+					<ul id="copyright">
+						<li>&copy; 2026 Xatun Abdullayeva. Bütün hüquqlar qorunur.</li>
+					</ul>
+				</footer>
+			</div>
+		</article>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
