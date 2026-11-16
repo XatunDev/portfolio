@@ -7,28 +7,44 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
 		<style>
-			/* Yuxarı menyu zolağını (#nav) genişləndirir və qızılı banneri ora yerləşdirir */
+			/* Yuxarı menyu zolağı və qızılı banner */
 			#nav {
-    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('images/1777637772740.jpg') right center / cover no-repeat !important;
-    padding: 25px 0 !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-}
-			/* Menyudakı yazıların qızılı fonda aydın oxunması üçün */
+				background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/banner.png') right center / cover no-repeat !important;
+				height: 70px !important;
+				line-height: 70px !important;
+				padding: 0 !important;
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+			}
+
+			/* Menyuların yerləşməsi və dizaynı */
+			#nav ul {
+				margin: 0;
+				padding: 0;
+				text-align: center;
+				list-style: none;
+			}
+
+			#nav li {
+				display: inline-block;
+				margin: 0 15px;
+			}
+
 			#nav a {
 				color: #ffffff !important;
 				font-weight: 600;
-				text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
-				padding: 8px 16px !important;
-				border-radius: 6px;
-				transition: background-color 0.2s ease;
-			}
-			#nav a:hover {
-				background-color: rgba(0, 0, 0, 0.35) !important;
+				font-size: 15px;
+				text-decoration: none;
+				text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+				transition: opacity 0.2s ease;
 			}
 
-			/* Menyunun genişlənməsinə görə ilk bölmənin yuxarı boşluğunu tənzimləyir */
+			#nav a:hover {
+				opacity: 0.8;
+			}
+
+			/* Menyunun altında qalan ilk bölmənin məsafəsi */
 			#top {
-				padding-top: 9.5em !important;
+				padding-top: 10em !important;
 			}
 
 			/* Profil şəklini tam dairə edir */
@@ -76,8 +92,8 @@
 
 			@media screen and (max-width: 736px) {
 				#nav {
-					padding: 10px 0 !important;
-					background-position: left center !important;
+					height: 60px !important;
+					line-height: 60px !important;
 				}
 				#top {
 					padding-top: 7em !important;
