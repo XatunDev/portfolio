@@ -7,6 +7,34 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
 		<style>
+			/* Yuxarı menyu zolağını (#nav) genişləndirir və qızılı banneri ora yerləşdirir */
+			#nav {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)), url('images/banner.png') !important;
+				background-size: cover !important;
+				background-position: right center !important;
+				background-repeat: no-repeat !important;
+				padding: 18px 0 !important; /* Zolağı bir az genişləndirir */
+				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+			}
+
+			/* Menyudakı yazıların qızılı fonda aydın oxunması üçün */
+			#nav a {
+				color: #ffffff !important;
+				font-weight: 600;
+				text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+				padding: 8px 16px !important;
+				border-radius: 6px;
+				transition: background-color 0.2s ease;
+			}
+			#nav a:hover {
+				background-color: rgba(0, 0, 0, 0.35) !important;
+			}
+
+			/* Menyunun genişlənməsinə görə ilk bölmənin yuxarı boşluğunu tənzimləyir */
+			#top {
+				padding-top: 9.5em !important;
+			}
+
 			/* Profil şəklini tam dairə edir */
 			.image.fit img {
 				width: 100%;
@@ -23,36 +51,6 @@
 			#top h1 {
 				line-height: 1.2 !important;
 				margin-bottom: 20px !important;
-			}
-
-			/* Hero (#top) bölməsinə yeni arxa fon */
-			#top {
-				background-image: url('images/1777637772740.jpg');
-				background-size: cover;
-				background-position: right center;
-				background-repeat: no-repeat;
-				color: #ffffff;
-				position: relative;
-			}
-
-			/* Yazıların qızılı fonda aydın oxunması üçün kölgə */
-			#top h1, #top h1 strong, #top p {
-				color: #ffffff !important;
-				text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
-			}
-
-			/* Hero bölməsindəki düymələrin dizaynı */
-			#top .button {
-				background-color: #1f1f1f;
-				color: #ffffff !important;
-				box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-			}
-			#top .button:hover {
-				background-color: #333333;
-			}
-			#top .button.alt {
-				background-color: rgba(255, 255, 255, 0.2);
-				border: 1px solid #ffffff;
 			}
 
 			.hero-buttons {
@@ -80,10 +78,13 @@
 				padding-top: 15px;
 			}
 
-			/* Mobil ekranlar üçün arxa fon tənzimləməsi */
 			@media screen and (max-width: 736px) {
+				#nav {
+					padding: 10px 0 !important;
+					background-position: left center !important;
+				}
 				#top {
-					background-position: left center;
+					padding-top: 7em !important;
 				}
 			}
 		</style>
