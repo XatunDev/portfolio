@@ -8,45 +8,46 @@
 		
 		<style>
 			/* Yuxarı menyu zolağı və şəklin tam ölçüyə uyğunlaşdırılması */
-			#nav {
-				background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('images/Gemini_Generated_Image_v5x0s2v5x0s2v5x0.jpg') center center / 100% 100% no-repeat !important;
-				height: 70px !important;
-				line-height: 70px !important;
-				padding: 0 !important;
-				box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-			}
+			/* Yuxarı menyu zolağının hündürlüyünü artırırıq */
+#nav {
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('images/banner.png') center center / cover no-repeat !important;
+    height: 120px !important;
+    line-height: 120px !important;
+    padding: 0 !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
 
-			/* Menyuların yerləşməsi və dizaynı */
-			#nav ul {
-				margin: 0;
-				padding: 0;
-				text-align: center;
-				list-style: none;
-			}
+/* Menyu yazılarını zolağın tən ortasına salırıq */
+#nav ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    line-height: 120px;
+}
 
-			#nav li {
-				display: inline-block;
-				margin: 0 15px;
-			}
+#nav li {
+    display: inline-block;
+    margin: 0 15px;
+}
 
-			#nav a {
-				color: #ffffff !important;
-				font-weight: 600;
-				font-size: 15px;
-				text-decoration: none;
-				text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
-				transition: opacity 0.2s ease;
-			}
+#nav a {
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+    transition: opacity 0.2s ease;
+}
 
-			#nav a:hover {
-				opacity: 0.8;
-			}
+#nav a:hover {
+    opacity: 0.8;
+}
 
-			/* Menyunun altında qalan ilk bölmənin məsafəsi */
-			#top {
-				padding-top: 10em !important;
-			}
-
+/* Menyu böyüdüyü üçün ilk bölmənin yuxarı boşluğunu tənzimləyirik */
+#top {
+    padding-top: 11em !important;
+}
 			/* Profil şəklini tam dairə edir */
 			.image.fit img {
 				width: 100%;
