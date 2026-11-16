@@ -7,23 +7,23 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		
 		<style>
-			/* Yuxarı menyu zolağı və şəklin tam ölçüyə uyğunlaşdırılması */
-			/* Yuxarı menyu zolağının hündürlüyünü artırırıq */
+		
 #nav {
-    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('images/Gemini_Generated_Image_v5x0s2v5x0s2v5x0.jpg') center center / cover no-repeat !important;
-    height: 120px !important;
-    line-height: 120px !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('images/Gemini_Generated_Image_v5x0s2v5x0s2v5x0.jpg') center left / auto 100% no-repeat !important;
+    height: 90px !important;
+    line-height: 90px !important;
     padding: 0 !important;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Menyu yazılarını zolağın tən ortasına salırıq */
+/* Menyu yazılarını tən ortaya və səliqəli yerləşdiririk */
 #nav ul {
     margin: 0;
     padding: 0;
-    text-align: center;
+    text-align: right; /* Loqo solda olduğu üçün yazıları sağa çəkirik */
+    padding-right: 50px;
     list-style: none;
-    line-height: 120px;
+    line-height: 90px;
 }
 
 #nav li {
@@ -34,7 +34,7 @@
 #nav a {
     color: #ffffff !important;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     text-decoration: none;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
     transition: opacity 0.2s ease;
@@ -44,9 +44,9 @@
     opacity: 0.8;
 }
 
-/* Menyu böyüdüyü üçün ilk bölmənin yuxarı boşluğunu tənzimləyirik */
+/* İlk bölmənin yuxarı boşluğunu buna uyğunlaşdırırıq */
 #top {
-    padding-top: 11em !important;
+    padding-top: 10em !important;
 }
 			/* Profil şəklini tam dairə edir */
 			.image.fit img {
