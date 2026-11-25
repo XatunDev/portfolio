@@ -61,7 +61,14 @@ section h2{font-size:clamp(28px,4vw,38px);margin-bottom:36px}
 .rows dt,.rows h3{font:600 20px var(--head)}
 .rows dd,.rows p{margin:0;color:var(--muted)}
 .rows dd b{color:var(--ink);font-weight:600}
-
+  
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.skill{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:12px;padding:22px 24px}
+.skill h3{font-size:19px;margin-bottom:14px}
+.skill .tags li{font-size:15px;padding:5px 12px;background:var(--bg)}
+@media (max-width:640px){.skills{grid-template-columns:1fr}}
+  
 /* projects */
 .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .project{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
@@ -140,18 +147,34 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
       <img class="photo" src="ae919c10-54e1-4722-a882-fdee1b714156.jpg" alt="Xatun Abdullayeva">
     </div>
   </div>
+<section id="skills">
+  <div class="wrap">
+    <h2><span class="az">Texniki bacarıqlar</span><span class="en">Technical skills</span></h2>
+    <div class="skills">
 
-  <section id="skills">
-    <div class="wrap">
-      <h2><span class="az">Texniki bacarıqlar</span><span class="en">Technical skills</span></h2>
-      <dl class="rows" style="margin:0">
-        <div><dt><span class="az">Mobil</span><span class="en">Mobile</span></dt><dd>Flutter, Dart, React Native</dd></div>
-        <div><dt>State management</dt><dd>BLoC / Cubit</dd></div>
-        <div><dt>Backend &amp; Data</dt><dd>Firebase (Auth, Firestore), REST API, local storage</dd></div>
-        <div><dt><span class="az">Alətlər</span><span class="en">Tools</span></dt><dd>Git / GitHub, Figma</dd></div>
-      </dl>
+      <div class="skill">
+        <h3><span class="az">Mobil</span><span class="en">Mobile</span></h3>
+        <ul class="tags"><li>Flutter</li><li>Dart</li><li>React Native</li></ul>
+      </div>
+
+      <div class="skill">
+        <h3>State management</h3>
+        <ul class="tags"><li>BLoC</li><li>Cubit</li></ul>
+      </div>
+
+      <div class="skill">
+        <h3>Backend &amp; Data</h3>
+        <ul class="tags"><li>Firebase Auth</li><li>Firestore</li><li>REST API</li><li>Local storage</li></ul>
+      </div>
+
+      <div class="skill">
+        <h3><span class="az">Alətlər</span><span class="en">Tools</span></h3>
+        <ul class="tags"><li>Git</li><li>GitHub</li><li>Figma</li></ul>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <section id="experience">
     <div class="wrap">
