@@ -91,15 +91,21 @@ form button{justify-self:start;cursor:pointer}
 footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
 
 @media (max-width:860px){
-  .hero .wrap{grid-template-columns:1fr;gap:40px}
-  .photo{order:-1;width:220px;justify-self:start}
+  .hero .wrap{grid-template-columns:1fr;gap:28px}
+  .photo{order:-1;width:150px;justify-self:start;box-shadow:8px 8px 0 var(--amber)}
   .projects{grid-template-columns:1fr}
   .rows>div{grid-template-columns:1fr;gap:6px}
 }
 @media (max-width:640px){
   .nav ul{display:none}
   .two{grid-template-columns:1fr}
-  .hero{padding-top:48px}
+  .hero{padding:32px 0 48px}
+  .hero .wrap{gap:22px}
+  .photo{width:112px;box-shadow:6px 6px 0 var(--amber)}
+  .hero h1{font-size:34px}
+  .hero .role{font-size:19px;margin:10px 0 16px}
+  .hero p.lead{font-size:16px;margin-bottom:24px}
+  .skills{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
