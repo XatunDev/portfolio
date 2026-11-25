@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Xatun Abdullayeva | Mobile Developer (Flutter)</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%230B7A75' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='7' y='2' width='18' height='28' rx='4'/%3E%3Cpath d='M14 5.5h4M14 11l-3 4.5 3 4.5M18 11l3 4.5-3 4.5M14 26h4'/%3E%3C/svg%3E">
-<meta name="description" content="Xatun Abdullayeva, Flutter mobile developer. Flutter mobil tətbiq developeri. Firebase, REST API, BLoC, Clean Architecture.">
+<title>Xatun Abdullayeva | Mobile Developer (Flutter, React Native)</title>
+<meta name="description" content="Xatun Abdullayeva, Flutter və React Native mobil tətbiq developeri. Firebase, REST API, BLoC, Clean Architecture.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' fill='none' stroke='%230B7A75' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='7' y='2' width='18' height='28' rx='4'/%3E%3Cpath d='M14 5.5h4M14 11l-3 4.5 3 4.5M18 11l3 4.5-3 4.5M14 26h4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,7 +45,6 @@ html[lang="az"] .lang [data-set="az"],html[lang="en"] .lang [data-set="en"]{back
 .hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;grid-template-areas:"who photo" "about photo";column-gap:56px;row-gap:0;align-items:center}
 .who{grid-area:who;align-self:end}
 .about{grid-area:about;align-self:start}
-.photo{grid-area:photo}
 .hero h1{font-size:clamp(36px,5vw,56px);letter-spacing:-.02em}
 .hero .role{font:600 clamp(20px,2.6vw,26px) var(--head);color:var(--teal);margin:14px 0 22px}
 .hero p.lead{max-width:56ch;color:var(--muted);margin:0 0 32px}
@@ -54,24 +53,22 @@ html[lang="az"] .lang [data-set="az"],html[lang="en"] .lang [data-set="en"]{back
 .btn.alt{background:none;color:var(--ink);border-color:var(--line)}
 .btn:hover{border-color:var(--ink)}
 .btn.sm{padding:8px 16px;font-size:15px}
-.photo{justify-self:center;width:min(300px,100%);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:center 30%;box-shadow:12px 12px 0 var(--amber)}
+.photo{grid-area:photo;justify-self:center;width:min(300px,100%);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:center 30%;box-shadow:12px 12px 0 var(--amber)}
 
 /* sections */
 section{padding:72px 0;border-top:1px solid var(--line)}
 section h2{font-size:clamp(28px,4vw,38px);margin-bottom:36px}
 .rows>div{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--line)}
 .rows>div:first-child{padding-top:0}
-.rows dt,.rows h3{font:600 20px var(--head)}
-.rows dd,.rows p{margin:0;color:var(--muted)}
-.rows dd b{color:var(--ink);font-weight:600}
-  
+.rows h3{font:600 20px var(--head)}
+.rows p{margin:0;color:var(--muted)}
+
 /* skills */
 .skills{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .skill{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:12px;padding:22px 24px}
 .skill h3{font-size:19px;margin-bottom:14px}
 .skill .tags li{font-size:15px;padding:5px 12px;background:var(--bg)}
-@media (max-width:640px){.skills{grid-template-columns:1fr}}
-  
+
 /* projects */
 .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .project{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
@@ -93,6 +90,7 @@ form button{justify-self:start;cursor:pointer}
 .links{display:flex;gap:24px;margin-top:32px;font-weight:600}
 footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
 
+/* responsive */
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:auto 1fr;grid-template-areas:"photo who" "about about";column-gap:22px;row-gap:24px}
   .who{align-self:center}
@@ -120,13 +118,13 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
 
 <header class="nav">
   <div class="wrap">
-  <a class="brand" href="#top">
-  <svg class="logo" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <rect x="7" y="2" width="18" height="28" rx="4"/>
-    <path d="M14 5.5h4M14 11l-3 4.5 3 4.5M18 11l3 4.5-3 4.5M14 26h4"/>
-  </svg>
-  <span>Xatun Abdullayeva</span>
-</a>
+    <a class="brand" href="#top">
+      <svg class="logo" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="7" y="2" width="18" height="28" rx="4"/>
+        <path d="M14 5.5h4M14 11l-3 4.5 3 4.5M18 11l3 4.5-3 4.5M14 26h4"/>
+      </svg>
+      <span>Xatun Abdullayeva</span>
+    </a>
     <ul>
       <li><a href="#skills"><span class="az">Bacarıqlar</span><span class="en">Skills</span></a></li>
       <li><a href="#experience"><span class="az">Təcrübə</span><span class="en">Experience</span></a></li>
@@ -141,57 +139,51 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
 </header>
 
 <main id="top">
- <div class="hero">
-  <div class="wrap">
-    <div class="who">
-      <h1>Xatun Abdullayeva</h1>
-      <p class="role">
-        <span class="az">Mobile Developer, Flutter və React Native</span>
-        <span class="en">Mobile Developer, Flutter and React Native</span>
-      </p>
-    </div>
-    <img class="photo" src="ae919c10-54e1-4722-a882-fdee1b714156.jpg" alt="Xatun Abdullayeva">
-    <div class="about">
-      <p class="lead az">Flutter ilə iOS və Android üçün sürətli, səliqəli tətbiqlər hazırlayıram. Firebase və REST API ilə işləyir, kodu Clean Architecture və BLoC ilə strukturlaşdırıram. Startap mühitində işləmişəm, real istifadəçi üçün UI qurmuşam və indi komandaya qoşulub öyrənməyə, böyüməyə hazıram.</p>
-      <p class="lead en">I build fast, clean iOS and Android apps with Flutter. I work with Firebase and REST APIs and structure code with Clean Architecture and BLoC. I have worked in startup environments, built UI for real users, and I am ready to join a team, learn and grow.</p>
-      <div class="btns">
-        <a class="btn" href="Xatın_Abdullayeva CV.pdf" download><span class="az">CV yüklə</span><span class="en">Download CV</span></a>
-        <a class="btn alt" href="#contact"><span class="az">Əlaqə saxla</span><span class="en">Get in touch</span></a>
+
+  <div class="hero">
+    <div class="wrap">
+      <div class="who">
+        <h1>Xatun Abdullayeva</h1>
+        <p class="role">
+          <span class="az">Mobile Developer, Flutter və React Native</span>
+          <span class="en">Mobile Developer, Flutter and React Native</span>
+        </p>
       </div>
-    </div>
-  </div>
-</div>
       <img class="photo" src="ae919c10-54e1-4722-a882-fdee1b714156.jpg" alt="Xatun Abdullayeva">
+      <div class="about">
+        <p class="lead az">Flutter ilə iOS və Android üçün sürətli, səliqəli tətbiqlər hazırlayıram. Firebase və REST API ilə işləyir, kodu Clean Architecture və BLoC ilə strukturlaşdırıram. Startap mühitində işləmişəm, real istifadəçi üçün UI qurmuşam və indi komandaya qoşulub öyrənməyə, böyüməyə hazıram.</p>
+        <p class="lead en">I build fast, clean iOS and Android apps with Flutter. I work with Firebase and REST APIs and structure code with Clean Architecture and BLoC. I have worked in startup environments, built UI for real users, and I am ready to join a team, learn and grow.</p>
+        <div class="btns">
+          <a class="btn" href="Xatın_Abdullayeva CV.pdf" download><span class="az">CV yüklə</span><span class="en">Download CV</span></a>
+          <a class="btn alt" href="#contact"><span class="az">Əlaqə saxla</span><span class="en">Get in touch</span></a>
+        </div>
+      </div>
     </div>
   </div>
-<section id="skills">
-  <div class="wrap">
-    <h2><span class="az">Texniki bacarıqlar</span><span class="en">Technical skills</span></h2>
-    <div class="skills">
 
-      <div class="skill">
-        <h3><span class="az">Mobil</span><span class="en">Mobile</span></h3>
-        <ul class="tags"><li>Flutter</li><li>Dart</li><li>React Native</li></ul>
+  <section id="skills">
+    <div class="wrap">
+      <h2><span class="az">Texniki bacarıqlar</span><span class="en">Technical skills</span></h2>
+      <div class="skills">
+        <div class="skill">
+          <h3><span class="az">Mobil</span><span class="en">Mobile</span></h3>
+          <ul class="tags"><li>Flutter</li><li>Dart</li><li>React Native</li></ul>
+        </div>
+        <div class="skill">
+          <h3>State management</h3>
+          <ul class="tags"><li>BLoC</li><li>Cubit</li></ul>
+        </div>
+        <div class="skill">
+          <h3>Backend &amp; Data</h3>
+          <ul class="tags"><li>Firebase Auth</li><li>Firestore</li><li>REST API</li><li>Local storage</li></ul>
+        </div>
+        <div class="skill">
+          <h3><span class="az">Alətlər</span><span class="en">Tools</span></h3>
+          <ul class="tags"><li>Git</li><li>GitHub</li><li>Figma</li></ul>
+        </div>
       </div>
-
-      <div class="skill">
-        <h3>State management</h3>
-        <ul class="tags"><li>BLoC</li><li>Cubit</li></ul>
-      </div>
-
-      <div class="skill">
-        <h3>Backend &amp; Data</h3>
-        <ul class="tags"><li>Firebase Auth</li><li>Firestore</li><li>REST API</li><li>Local storage</li></ul>
-      </div>
-
-      <div class="skill">
-        <h3><span class="az">Alətlər</span><span class="en">Tools</span></h3>
-        <ul class="tags"><li>Git</li><li>GitHub</li><li>Figma</li></ul>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
   <section id="experience">
     <div class="wrap">
@@ -206,10 +198,10 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
           <h3><span class="az">UI hazırlanması</span><span class="en">UI development</span></h3>
           <p><span class="az">Sahədə işləyən mütəxəssislər üçün iş layihələrinin interfeysini hazırlamışam.</span><span class="en">I have built interfaces for work projects of professionals in the field.</span></p>
         </div>
-      <div>
-  <h3><span class="az">Təhsil</span><span class="en">Education</span></h3>
-  <p><span class="az">Flutter və React Native üzrə kursları bitirmişəm.</span><span class="en">Completed courses in Flutter and React Native.</span></p>
-</div>
+        <div>
+          <h3><span class="az">Təhsil</span><span class="en">Education</span></h3>
+          <p><span class="az">Flutter və React Native üzrə kursları bitirmişəm.</span><span class="en">Completed courses in Flutter and React Native.</span></p>
+        </div>
       </div>
     </div>
   </section>
@@ -285,17 +277,20 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
       </div>
     </div>
   </section>
+
 </main>
 
 <footer><div class="wrap">&copy; 2026 Xatun Abdullayeva</div></footer>
 
 <script>
 (function(){
-  var titles={az:"Xatun Abdullayeva | Mobile Developer (Flutter)",en:"Xatun Abdullayeva | Mobile Developer (Flutter)"};
+  var title="Xatun Abdullayeva | Mobile Developer (Flutter, React Native)";
   function setLang(l){
     document.documentElement.lang=l;
-    document.title=titles[l];
-    document.querySelectorAll("[data-"+l+"]").forEach(function(el){el.placeholder=el.getAttribute("data-"+l)});
+    document.title=title;
+    document.querySelectorAll("[data-"+l+"]").forEach(function(el){
+      el.placeholder=el.getAttribute("data-"+l);
+    });
     try{localStorage.setItem("lang",l)}catch(e){}
   }
   var l="az";
