@@ -42,7 +42,10 @@ html[lang="az"] .lang [data-set="az"],html[lang="en"] .lang [data-set="en"]{back
 
 /* hero */
 .hero{padding:88px 0 72px}
-.hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center}
+.hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;grid-template-areas:"who photo" "about photo";column-gap:56px;row-gap:0;align-items:center}
+.who{grid-area:who;align-self:end}
+.about{grid-area:about;align-self:start}
+.photo{grid-area:photo}
 .hero h1{font-size:clamp(36px,5vw,56px);letter-spacing:-.02em}
 .hero .role{font:600 clamp(20px,2.6vw,26px) var(--head);color:var(--teal);margin:14px 0 22px}
 .hero p.lead{max-width:56ch;color:var(--muted);margin:0 0 32px}
@@ -91,21 +94,24 @@ form button{justify-self:start;cursor:pointer}
 footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
 
 @media (max-width:860px){
-  .hero .wrap{grid-template-columns:1fr;gap:28px}
-  .photo{order:-1;width:150px;justify-self:start;box-shadow:8px 8px 0 var(--amber)}
+  .hero .wrap{grid-template-columns:auto 1fr;grid-template-areas:"photo who" "about about";column-gap:22px;row-gap:24px}
+  .who{align-self:center}
+  .about{align-self:start}
+  .photo{width:130px;justify-self:start;box-shadow:7px 7px 0 var(--amber)}
+  .hero .role{margin:8px 0 0}
   .projects{grid-template-columns:1fr}
   .rows>div{grid-template-columns:1fr;gap:6px}
 }
 @media (max-width:640px){
   .nav ul{display:none}
   .two{grid-template-columns:1fr}
-  .hero{padding:32px 0 48px}
-  .hero .wrap{gap:22px}
-  .photo{width:112px;box-shadow:6px 6px 0 var(--amber)}
-  .hero h1{font-size:34px}
-  .hero .role{font-size:19px;margin:10px 0 16px}
-  .hero p.lead{font-size:16px;margin-bottom:24px}
   .skills{grid-template-columns:1fr}
+  .hero{padding:32px 0 48px}
+  .hero .wrap{column-gap:18px}
+  .photo{width:104px;box-shadow:5px 5px 0 var(--amber)}
+  .hero h1{font-size:30px}
+  .hero .role{font-size:16px}
+  .hero p.lead{font-size:16px;margin-bottom:24px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
@@ -135,21 +141,26 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
 </header>
 
 <main id="top">
-  <div class="hero">
-    <div class="wrap">
-      <div>
-        <h1>Xatun Abdullayeva</h1>
-        <p class="role">
-          <span class="az">Mobile Developer, Flutter,React Native</span>
-          <span class="en">Mobile Developer, Flutter,React Native</span>
-        </p>
-        <p class="lead az">Flutter ilə iOS və Android üçün sürətli, səliqəli tətbiqlər hazırlayıram. Firebase və REST API ilə işləyir, kodu Clean Architecture və BLoC ilə strukturlaşdırıram. Startap mühitində işləmişəm, real istifadəçi üçün UI qurmuşam və indi komandaya qoşulub öyrənməyə, böyüməyə hazıram.</p>
-        <p class="lead en">I build fast, clean iOS and Android apps with Flutter. I work with Firebase and REST APIs and structure code with Clean Architecture and BLoC. I have worked in startup environments, built UI for real users, and I am ready to join a team, learn and grow.</p>
-        <div class="btns">
-          <a class="btn" href="Xatın_Abdullayeva CV.pdf" download><span class="az">CV yüklə</span><span class="en">Download CV</span></a>
-          <a class="btn alt" href="#contact"><span class="az">Əlaqə saxla</span><span class="en">Get in touch</span></a>
-        </div>
+ <div class="hero">
+  <div class="wrap">
+    <div class="who">
+      <h1>Xatun Abdullayeva</h1>
+      <p class="role">
+        <span class="az">Mobile Developer, Flutter və React Native</span>
+        <span class="en">Mobile Developer, Flutter and React Native</span>
+      </p>
+    </div>
+    <img class="photo" src="ae919c10-54e1-4722-a882-fdee1b714156.jpg" alt="Xatun Abdullayeva">
+    <div class="about">
+      <p class="lead az">Flutter ilə iOS və Android üçün sürətli, səliqəli tətbiqlər hazırlayıram. Firebase və REST API ilə işləyir, kodu Clean Architecture və BLoC ilə strukturlaşdırıram. Startap mühitində işləmişəm, real istifadəçi üçün UI qurmuşam və indi komandaya qoşulub öyrənməyə, böyüməyə hazıram.</p>
+      <p class="lead en">I build fast, clean iOS and Android apps with Flutter. I work with Firebase and REST APIs and structure code with Clean Architecture and BLoC. I have worked in startup environments, built UI for real users, and I am ready to join a team, learn and grow.</p>
+      <div class="btns">
+        <a class="btn" href="Xatın_Abdullayeva CV.pdf" download><span class="az">CV yüklə</span><span class="en">Download CV</span></a>
+        <a class="btn alt" href="#contact"><span class="az">Əlaqə saxla</span><span class="en">Get in touch</span></a>
       </div>
+    </div>
+  </div>
+</div>
       <img class="photo" src="ae919c10-54e1-4722-a882-fdee1b714156.jpg" alt="Xatun Abdullayeva">
     </div>
   </div>
