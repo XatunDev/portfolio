@@ -1,307 +1,262 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="az">
-	<head>
-		<title>Xatun Abdullayeva | Mobile Developer (Flutter, React Native)</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		
-		<style>
-
-
-#nav {
-    width: 100% !important;
-    height: 90px !important;
-    line-height: 90px !important;
-
-    background:
-        url('images/Analysis output 1.png')
-        center center / cover no-repeat !important;
-
-    padding: 0 !important;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xatun Abdullayeva | Mobile Developer (Flutter)</title>
+<meta name="description" content="Xatun Abdullayeva, Flutter mobile developer. Flutter mobil tətbiq developeri. Firebase, REST API, BLoC, Clean Architecture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F2F5F7; --surface:#FFFFFF; --ink:#0F1B2D; --muted:#4F5F73; --line:#D5DDE5;
+  --teal:#0B7A75; --teal-ink:#FFFFFF; --amber:#FFB547;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,-apple-system,sans-serif;
 }
-
-#nav ul {
-    margin: 0;
-    padding: 0 50px 0 0;
-    text-align: right;
-    list-style: none;
-    line-height: 90px;
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0D1620;--surface:#15212E;--ink:#E8EEF3;--muted:#9FB0C2;--line:#27384A;--teal:#46C7BC;--teal-ink:#07201E}
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+html[lang="az"] .en,html[lang="en"] .az{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
 
-#nav li {
-    display: inline-block;
-    margin: 0 15px;
+/* nav */
+header.nav{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.nav .brand{font:700 18px var(--head);text-decoration:none}
+.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:500;color:var(--muted)}
+.nav ul a:hover{color:var(--ink)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.lang button{font:600 14px var(--body);background:none;color:var(--muted);border:0;padding:6px 14px;cursor:pointer}
+html[lang="az"] .lang [data-set="az"],html[lang="en"] .lang [data-set="en"]{background:var(--teal);color:var(--teal-ink)}
+
+/* hero */
+.hero{padding:88px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,68px);letter-spacing:-.02em}
+.hero .role{font:600 clamp(20px,2.6vw,26px) var(--head);color:var(--teal);margin:14px 0 22px}
+.hero p.lead{max-width:56ch;color:var(--muted);margin:0 0 32px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;font:600 16px var(--body);text-decoration:none;padding:12px 24px;border-radius:10px;border:2px solid var(--teal);background:var(--teal);color:var(--teal-ink)}
+.btn.alt{background:none;color:var(--ink);border-color:var(--line)}
+.btn:hover{border-color:var(--ink)}
+.btn.sm{padding:8px 16px;font-size:15px}
+.photo{justify-self:center;width:min(300px,100%);aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:center 30%;box-shadow:12px 12px 0 var(--amber)}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(28px,4vw,38px);margin-bottom:36px}
+.rows>div{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:18px 0;border-bottom:1px solid var(--line)}
+.rows>div:first-child{padding-top:0}
+.rows dt,.rows h3{font:600 20px var(--head)}
+.rows dd,.rows p{margin:0;color:var(--muted)}
+.rows dd b{color:var(--ink);font-weight:600}
+
+/* projects */
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.project{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.project .shot{display:block;height:210px;background:var(--bg);border-bottom:1px solid var(--line)}
+.project .shot img{width:100%;height:100%;object-fit:contain;padding:14px}
+.project .body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.project h3{font-size:22px}
+.project p{margin:0;color:var(--muted);font-size:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.tags li{font-size:13.5px;font-weight:500;border:1px solid var(--line);border-radius:6px;padding:2px 9px}
+.project .btns{margin-top:auto;padding-top:6px}
+
+/* contact */
+form{display:grid;gap:14px;max-width:620px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+input[type=text],input[type=email],textarea{width:100%;font:400 16px var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+textarea{min-height:140px;resize:vertical}
+form button{justify-self:start;cursor:pointer}
+.links{display:flex;gap:24px;margin-top:32px;font-weight:600}
+footer{padding:28px 0 40px;color:var(--muted);font-size:15px}
+
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
+  .photo{order:-1;width:220px;justify-self:start}
+  .projects{grid-template-columns:1fr}
+  .rows>div{grid-template-columns:1fr;gap:6px}
 }
-
-#nav a {
-    color: #ffffff !important;
-    font-weight: 600;
-    font-size: 15px;
-    text-decoration: none;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.9);
+@media (max-width:640px){
+  .nav ul{display:none}
+  .two{grid-template-columns:1fr}
+  .hero{padding-top:48px}
 }
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
 
-@media screen and (max-width: 736px) {
-    #nav {
-        height: 60px !important;
-        line-height: 60px !important;
-    }
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Xatun Abdullayeva</a>
+    <ul>
+      <li><a href="#skills"><span class="az">Bacarıqlar</span><span class="en">Skills</span></a></li>
+      <li><a href="#experience"><span class="az">Təcrübə</span><span class="en">Experience</span></a></li>
+      <li><a href="#projects"><span class="az">Layihələr</span><span class="en">Projects</span></a></li>
+      <li><a href="#contact"><span class="az">Əlaqə</span><span class="en">Contact</span></a></li>
+    </ul>
+    <div class="lang" role="group" aria-label="Language / Dil">
+      <button type="button" data-set="az" aria-label="Azərbaycan dili">AZ</button>
+      <button type="button" data-set="en" aria-label="English">EN</button>
+    </div>
+  </div>
+</header>
 
-    #nav ul {
-        line-height: 60px;
-        padding-right: 5px;
-    }
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Xatun Abdullayeva</h1>
+        <p class="role">
+          <span class="az">Mobile Developer, Flutter (React Native öyrənir)</span>
+          <span class="en">Mobile Developer, Flutter (learning React Native)</span>
+        </p>
+        <p class="lead az">Flutter ilə iOS və Android üçün sürətli, səliqəli tətbiqlər hazırlayıram. Firebase və REST API ilə işləyir, kodu Clean Architecture və BLoC ilə strukturlaşdırıram. Startap mühitində işləmişəm, real istifadəçi üçün UI qurmuşam və indi komandaya qoşulub öyrənməyə, böyüməyə hazıram.</p>
+        <p class="lead en">I build fast, clean iOS and Android apps with Flutter. I work with Firebase and REST APIs and structure code with Clean Architecture and BLoC. I have worked in startup environments, built UI for real users, and I am ready to join a team, learn and grow.</p>
+        <div class="btns">
+          <a class="btn" href="Xatın_Abdullayeva CV.pdf" download><span class="az">CV yüklə</span><span class="en">Download CV</span></a>
+          <a class="btn alt" href="#contact"><span class="az">Əlaqə saxla</span><span class="en">Get in touch</span></a>
+        </div>
+      </div>
+      <img class="photo" src="ae919c10-54e1-4722-a882-fdee1b714156.jpg" alt="Xatun Abdullayeva">
+    </div>
+  </div>
 
-    #nav li {
-        margin: 0 5px;
-    }
-}
+  <section id="skills">
+    <div class="wrap">
+      <h2><span class="az">Nə ilə işləyirəm</span><span class="en">What I work with</span></h2>
+      <dl class="rows" style="margin:0">
+        <div><dt><span class="az">Mobil</span><span class="en">Mobile</span></dt><dd><b>Flutter, Dart</b>. <span class="az">React Native öyrənirəm.</span><span class="en">Learning React Native.</span></dd></div>
+        <div><dt>State management</dt><dd>BLoC / Cubit</dd></div>
+        <div><dt>Backend &amp; Data</dt><dd>Firebase (Auth, Firestore), REST API, local storage</dd></div>
+        <div><dt><span class="az">Alətlər</span><span class="en">Tools</span></dt><dd>Git / GitHub, Figma</dd></div>
+      </dl>
+    </div>
+  </section>
 
+  <section id="experience">
+    <div class="wrap">
+      <h2><span class="az">Təcrübə</span><span class="en">Experience</span></h2>
+      <div class="rows">
+        <div>
+          <h3><span class="az">Startap layihələri</span><span class="en">Startup projects</span></h3>
+          <!-- Burada startapın adını, rolunu və tarixləri əlavə et / Add the startup name, your role and dates here -->
+          <p><span class="az">Startap komandalarında iştirak etmişəm və mobil tətbiq üzərində komanda ilə işləmişəm.</span><span class="en">I have taken part in startup teams and worked with a team on mobile apps.</span></p>
+        </div>
+        <div>
+          <h3><span class="az">UI hazırlanması</span><span class="en">UI development</span></h3>
+          <p><span class="az">Sahədə işləyən mütəxəssislər üçün iş layihələrinin interfeysini hazırlamışam.</span><span class="en">I have built interfaces for work projects of professionals in the field.</span></p>
+        </div>
+        <div>
+          <h3><span class="az">Təhsil</span><span class="en">Education</span></h3>
+          <p><span class="az">Flutter üzrə kursu bitirmişəm.</span><span class="en">Completed a Flutter course.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* İlk bölmənin yuxarı boşluğunu buna uyğunlaşdırırıq */
-#top {
-    padding-top: 10em !important;
-}
-			/* Profil şəklini tam dairə edir */
-			.image.fit img {
-				width: 100%;
-				max-width: 280px;
-				aspect-ratio: 1 / 1;
-				object-fit: cover;
-				object-position: center 30%; 
-				border-radius: 50%;
-				margin: 0 auto;
-				display: block;
-			}
+  <section id="projects">
+    <div class="wrap">
+      <h2><span class="az">Layihələrim</span><span class="en">Projects</span></h2>
+      <div class="projects">
 
-			/* Başlıq sətir aralığı */
-			#top h1 {
-				line-height: 1.2 !important;
-				margin-bottom: 20px !important;
-			}
+        <article class="project">
+          <a class="shot" href="https://github.com/XatunDev/Paygenix" target="_blank" rel="noopener"><img src="images/paygenix.png" alt="Paygenix"></a>
+          <div class="body">
+            <h3>Paygenix</h3>
+            <p class="az">Local storage və Clean Architecture prinsipləri əsasında qurulmuş Flutter tətbiqi.</p>
+            <p class="en">A Flutter app built on local storage and Clean Architecture principles.</p>
+            <ul class="tags"><li>Flutter</li><li>Dart</li><li>Clean Architecture</li><li>Local storage</li></ul>
+            <div class="btns">
+              <a class="btn sm" href="https://github.com/XatunDev/Paygenix/releases/download/v1.0.0/app-release.apk" download><span class="az">APK yüklə</span><span class="en">Download APK</span></a>
+              <a class="btn sm alt" href="https://github.com/XatunDev/Paygenix" target="_blank" rel="noopener"><span class="az">Kod</span><span class="en">Code</span></a>
+            </div>
+          </div>
+        </article>
 
-			.hero-buttons {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 15px;
-			}
+        <article class="project">
+          <a class="shot" href="https://github.com/XatunDev/talk-mart" target="_blank" rel="noopener"><img src="images/talk-mart-logo.png" alt="TalkMart"></a>
+          <div class="body">
+            <h3>TalkMart</h3>
+            <p class="az">Məhsul siyahısı və səbət idarəsi olan e-ticarət tətbiqi. Məlumat REST API-dən gəlir.</p>
+            <p class="en">An e-commerce app with a product list and cart management. Data comes from a REST API.</p>
+            <ul class="tags"><li>Flutter</li><li>Dart</li><li>REST API</li></ul>
+            <div class="btns">
+              <a class="btn sm" href="https://github.com/XatunDev/talk-mart/releases/download/v1.0.0/app-release-11.apk" download><span class="az">APK yüklə</span><span class="en">Download APK</span></a>
+              <a class="btn sm alt" href="https://github.com/XatunDev/talk-mart" target="_blank" rel="noopener"><span class="az">Kod</span><span class="en">Code</span></a>
+            </div>
+          </div>
+        </article>
 
-			/* Layihə kartlarının eyni hündürlükdə və səliqəli görünməsi üçün */
-			.box.style2 {
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				height: 100%;
-			}
-			.box.style2 .image.featured img {
-				height: 200px;
-				object-fit: cover;
-			}
-			.project-buttons {
-				display: flex;
-				gap: 10px;
-				justify-content: center;
-				margin-top: auto;
-				padding-top: 15px;
-			}
+        <article class="project">
+          <a class="shot" href="https://github.com/XatunDev" target="_blank" rel="noopener"><img src="images/pic03.jpg" alt="Task Management App"></a>
+          <div class="body">
+            <h3>Task Management App</h3>
+            <p class="az">Tapşırıqları izləmək üçün tətbiq. Məlumat Firebase ilə saxlanılır.</p>
+            <p class="en">A task tracking app. Data is stored with Firebase.</p>
+            <ul class="tags"><li>Flutter</li><li>Dart</li><li>Firebase</li></ul>
+            <div class="btns">
+              <!-- Repo linkini düzəlt / Replace with the repo link -->
+              <a class="btn sm alt" href="https://github.com/XatunDev" target="_blank" rel="noopener"><span class="az">Kod</span><span class="en">Code</span></a>
+            </div>
+          </div>
+        </article>
 
-			@media screen and (max-width: 736px) {
-				#nav {
-					height: 60px !important;
-					line-height: 60px !important;
-				}
-				#top {
-					padding-top: 7em !important;
-				}
-			}
-		</style>
-	</head>
-	<body class="is-preload">
+      </div>
+    </div>
+  </section>
 
-		<nav id="nav">
-			<ul class="container">
-				<li><a href="#top">Giriş</a></li>
-				<li><a href="#work">Bacarıqlar</a></li>
-				<li><a href="#portfolio">Portfoliom</a></li>
-				<li><a href="#contact">Əlaqə</a></li>
-			</ul>
-		</nav>
+  <section id="contact">
+    <div class="wrap">
+      <h2><span class="az">Əlaqə</span><span class="en">Contact</span></h2>
+      <p class="az" style="color:var(--muted);max-width:56ch;margin:0 0 28px">Vakansiya, staj və ya layihə təklifi üçün yaza bilərsiniz.</p>
+      <p class="en" style="color:var(--muted);max-width:56ch;margin:0 0 28px">Write to me about a job, an internship or a project.</p>
+      <form method="POST" action="https://formspree.io/f/mrevvpqv">
+        <div class="two">
+          <input type="text" name="name" data-az="Adınız" data-en="Your name" required>
+          <input type="email" name="email" data-az="Email ünvanınız" data-en="Your email" required>
+        </div>
+        <input type="text" name="subject" data-az="Mövzu" data-en="Subject" required>
+        <textarea name="message" data-az="Mesajınız" data-en="Your message" required></textarea>
+        <button class="btn" type="submit"><span class="az">Mesajı göndər</span><span class="en">Send message</span></button>
+      </form>
+      <div class="links">
+        <a href="https://linkedin.com/in/xatun-abdullayeva" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/XatunDev" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </section>
+</main>
 
-		<article id="top" class="wrapper style1">
-			<div class="container">
-				<div class="row">
-					<div class="col-4 col-5-large col-12-medium">
-						<span class="image fit">
-							<img src="ae919c10-54e1-4722-a882-fdee1b714156.jpg" alt="Xatun Abdullayeva" />
-						</span>
-					</div>
-					<div class="col-8 col-7-large col-12-medium">
-						<header>
-							<h1>Xatun Abdullayeva<strong> - Flutter Developer</strong>.</h1>
-						</header>
-						<p>Flutter ilə iOS və Android üçün sürətli, səliqəli tətbiqlər hazırlayıram. Firebase və REST API ilə işləyir, kodu Clean Architecture və BLoC ilə strukturlaşdırıram. Startap mühitində işləmişəm, real istifadəçi üçün UI qurmuşam və indi komandaya qoşulub öyrənməyə, böyüməyə hazıram.</p>
-						<div class="hero-buttons">
-							<a href="#work" class="button large scrolly">Bacarıqlarımla tanış ol</a>
-							<a href="Xatın_Abdullayeva CV.pdf" class="button large alt" download>CV Yüklə</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</article>
+<footer><div class="wrap">&copy; 2026 Xatun Abdullayeva</div></footer>
 
-		<article id="work" class="wrapper style2">
-			<div class="container">
-				<header>
-					<h2>Nə ilə işləyirəm</h2>
-					<p>Mobil </p>
-				</header>
-				<div class="row aln-center">
-					<div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<span class="icon solid featured fa-mobile-alt"></span>
-							<h3>Mobil</h3>
-							<p> Flutter, Dart, React Native</p>
-						</section>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<span class="icon solid featured fa-layer-group"></span>
-							<h3>State management</h3>
-							<p> BLoC/Cubit</p>
-						</section>
-					</div><div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<span class="icon solid featured fa-layer-group"></span>
-							<h3>Alətlər</h3>
-							<p> Git/GitHub, Figma</p>
-						</section>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<section class="box style1">
-							<span class="icon solid featured fa-database"></span>
-							<h3>Backend & Data</h3>
-							<p>Firebase (Auth, Firestore), REST API, local storage</p>
-						</section>
-					</div>
-				</div>
-				<footer>
-					<p>Texnoloji bacarıqlarıma daha yaxından baxmaq və layihələrimi görmək istəyirsiniz?</p>
-					<a href="#portfolio" class="button large scrolly">Son layihələrimə baxın</a>
-				</footer>
-			</div>
-		</article>
-
-		<article id="portfolio" class="wrapper style3">
-			<div class="container">
-				<header>
-					<h2>Son zamanlar hazırladığım layihələr.</h2>
-					<p>Aşağıda Flutter ilə reallaşdırdığım bəzi mobil tətbiqlərin qısa təsvirləri və kodları verilmişdir.</p>
-				</header>
-				<div class="row">
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<div>
-								<a href="https://github.com/XatunDev/Paygenix" target="_blank" class="image featured"><img src="images/paygenix.png" alt="Paygenix App" /></a>
-								<h3><a href="https://github.com/XatunDev/Paygenix" target="_blank">Paygenix</a></h3>
-								<p>Local storage və Clean Architecture prinsipləri əsasında qurulmuş Flutter tətbiqi.</p>
-							</div>
-							<div class="project-buttons">
-								<a href="https://github.com/XatunDev/Paygenix/releases/download/v1.0.0/app-release.apk" class="button small" download>APK Yüklə</a>
-								<a href="https://github.com/XatunDev/Paygenix" target="_blank" class="button small alt">GitHub</a>
-							</div>
-						</article>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<div>
-								<a href="https://github.com/XatunDev/talk-mart" target="_blank" class="image featured"><img src="images/talk-mart-logo.png" alt="TalkMart App" /></a>
-								<h3><a href="https://github.com/XatunDev/talk-mart" target="_blank">TalkMart</a></h3>
-								<p>Məhsul siyahısı, səbət idarəedilməsi və REST API inteqrasiyası olan e-ticarət tətbiqi.</p>
-							</div>
-							<div class="project-buttons">
-								<a href="https://github.com/XatunDev/talk-mart/releases/download/v1.0.0/app-release-11.apk" class="button small" download>APK Yüklə</a>
-								<a href="https://github.com/XatunDev/talk-mart" target="_blank" class="button small alt">GitHub</a>
-							</div>
-						</article>
-					</div>
-					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<div>
-								<a href="https://github.com/XatunDev" target="_blank" class="image featured"><img src="images/pic03.jpg" alt="Task Management App" /></a>
-								<h3><a href="https://github.com/XatunDev" target="_blank">Task Management App</a></h3>
-								<p>Tapşırıqların izlənilməsi üçün Flutter və Firebase inteqrasiyalı idarəetmə layihəsi.</p>
-							</div>
-							<div class="project-buttons">
-								<a href="https://github.com/XatunDev" target="_blank" class="button small alt">GitHub-da Bax</a>
-							</div>
-						</article>
-					</div>
-				</div>
-				<footer>
-					<p>Hər hansı bir sualınız və ya layihə təklifiniz var?</p>
-					<a href="#contact" class="button large scrolly">Mənimlə əlaqə saxlayın</a>
-				</footer>
-			</div>
-		</article>
-
-		<article id="contact" class="wrapper style4">
-			<div class="container medium">
-				<header>
-					<h2>Mənimlə əlaqəyə keçin.</h2>
-					<p>Formu dolduraraq mesaj göndərə və ya sosial şəbəkələrdən yaza bilərsiniz.</p>
-				</header>
-				<div class="row">
-					<div class="col-12">
-						<form method="POST" action="https://formspree.io/f/mrevvpqv">
-							<div class="row">
-								<div class="col-6 col-12-small">
-									<input type="text" name="name" id="name" placeholder="Adınız" required />
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="email" name="email" id="email" placeholder="Email ünvanınız" required />
-								</div>
-								<div class="col-12">
-									<input type="text" name="subject" id="subject" placeholder="Mövzu" required />
-								</div>
-								<div class="col-12">
-									<textarea name="message" id="message" placeholder="Mesajınız" required></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Mesajı Göndər" /></li>
-										<li><input type="reset" value="Təmizlə" class="alt" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="col-12">
-						<hr />
-						<h3>Məni buralarda tapın...</h3>
-						<ul class="social">
-							<li><a href="https://linkedin.com/in/xatun-abdullayeva" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/XatunDev" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						</ul>
-						<hr />
-					</div>
-				</div>
-				<footer>
-					<ul id="copyright">
-						<li>&copy; 2026 Xatun Abdullayeva. Bütün hüquqlar qorunur.</li>
-					</ul>
-				</footer>
-			</div>
-		</article>
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-	</body>
+<script>
+(function(){
+  var titles={az:"Xatun Abdullayeva | Mobile Developer (Flutter)",en:"Xatun Abdullayeva | Mobile Developer (Flutter)"};
+  function setLang(l){
+    document.documentElement.lang=l;
+    document.title=titles[l];
+    document.querySelectorAll("[data-"+l+"]").forEach(function(el){el.placeholder=el.getAttribute("data-"+l)});
+    try{localStorage.setItem("lang",l)}catch(e){}
+  }
+  var l="az";
+  try{l=localStorage.getItem("lang")||"az"}catch(e){}
+  setLang(l==="en"?"en":"az");
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.addEventListener("click",function(){setLang(b.getAttribute("data-set"))});
+  });
+})();
+</script>
+</body>
 </html>
